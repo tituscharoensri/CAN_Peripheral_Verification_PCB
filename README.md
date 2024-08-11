@@ -58,3 +58,12 @@ Setting up and Preparation Example for STM32f446ret6 Custom PCB's.
 ### Reception Testing
 - TODO: How to set up CAN reception in cube ide
 
+# Future Improvements
+- Addition of built in ST-link functionality which can flash other STM32s with predefined test code using Serial Wire, then once the target STM32 is programmed it starts CAN transmission and reception autotests to test CAN functionality, then logs the feedback via LEDs/sending error messages to a comport/display.
+
+- Complete plug and play system
+
+- Works well when MCU chips and CAN circuitry is standardised
+
+- Difficulties implementing this come from 16 total variations of CAN1_Tx & CAN1_Rx pins, resulting in 16 different firmware images that need to be detected and stored in an external flash module.
+
