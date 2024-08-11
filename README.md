@@ -24,6 +24,17 @@ Previously to test CAN functionality in RedBack Racing, you would have to find a
 - SOLID: 1/Enabled/Occurance
 - Off: 0/Disabled/non-event
 
+### LEC Field Values
+LEC Field Values: The LEC bits are located in bits [2:0] of the CAN_ESR register.
+- 000: No Error
+- 001: Stuff Error
+- 010: Form Error
+- 011: Acknowledgment Error
+- 100: Bit recessive Error
+- 101: Bit dominant Error
+- 110: CRC Error
+- 111: Set by software
+
 
 ## Testing Process Overview
 Terminology:
