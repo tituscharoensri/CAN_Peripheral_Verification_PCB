@@ -16,14 +16,45 @@ Previously to test CAN functionality in RedBack Racing, you would have to find a
 - the 12th LED on the Tx ID (0b) row enables or disables continous attempts at CAN transmission. (Avoiding a "bus off" state when powered on without 2 nodes or improper hardware)
 - Last Error Code (LEC): 3 bit error code that is referenced in the reference manual (STM32f446ret6).
 - TxErr: Displays the occurance of a Transmission Error, more information can be found from the LEC.
+- Optional Termination, either can have 2 terminators or 1, depending on your PCB.
+- Power through jumper wires (Easily power both PCB's through a Debugger or External PS)
 
 ### LED States:
 - SOLID: 1/Enabled/Occurance
 - Off: 0/Disabled/non-event
 
 
-## Testing Process
+## Testing Process Overview
+Terminology:
 
-### Setup and Preparation
+- CAN Verification PCB: PCB_A
 
-Analog Signal Source: I set up a signal generator to produce a 1 kHz sine wave with an amplitude of 5V peak-to-peak, 2.5v DC offset.
+- User PCB: PCB_B
+### Transmission Testing
+1. Connect CANbus Lines
+
+2. Configure Termination
+
+3. Set up PCB_B to test Sending CAN packets with an identifier(CAN2.0A). E.g 0x555
+
+4. Power on BOTH PCB's
+
+5. Check Rx ID (0b) LED indicators on PCB_A. E.g 0b10101010101
+### Reception Testing
+1. Connect CANbus Lines
+
+2. Configure Termination
+
+3. Set up DIP Switches on PCB_A to test Sending CAN packets with an identifier(CAN2.0A). E.g 0b0010101011
+
+4. Power on BOTH PCB's
+
+5. Check status LED on PCB_B, to signify that 0xAB was recieved.
+
+## Setup and Preparation
+Setting up and Preparation Example for STM32f446ret6 Custom PCB's.
+### Transmission Testing
+- TODO: How to set up CAN transmission in cube ide
+### Reception Testing
+- TODO: How to set up CAN reception in cube ide
+
