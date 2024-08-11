@@ -12,7 +12,7 @@ Previously to test CAN functionality in RedBack Racing, you would have to find a
 
 ## Features
 - Tx ID (0b): Row representing 11 bit CAN packet Identifier to SEND.
-- Rx ID (0b): Row representing 11 bit CAN packet Identifier that has been recieved.
+- Rx ID (0b): Row representing 11 bit CAN packet Identifier that HAS BEEN RECIEVED.
 - the 12th LED on the Tx ID (0b) row enables or disables continous attempts at CAN transmission. (Avoiding a "bus off" state when powered on without 2 nodes or improper hardware)
 - Last Error Code (LEC): 3 bit error code that is referenced in the reference manual (STM32f446ret6).
 - TxErr: Displays the occurance of a Transmission Error, more information can be found from the LEC.
