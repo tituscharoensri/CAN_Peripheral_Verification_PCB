@@ -18,7 +18,7 @@ Previously to test CAN functionality in RedBack Racing, you would have to find a
 - TxErr: Displays the occurance of a Transmission Error, more information can be found from the LEC.
 - Optional Termination, either can have 2 terminators or 1, depending on your PCB.
 - Power through jumper wires (Easily power both PCB's through a Debugger or External PS)
-- Baud Rate (500kbits/s). (Adjusting the Baud rate will require reflashing)
+- Baud Rate (1Mhz). (Adjusting the Baud rate will require reflashing Firmware)
 
 ### LED States:
 - SOLID: 1/Enabled/Occurance
