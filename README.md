@@ -66,9 +66,87 @@ Terminology:
 ## Setup and Preparation
 Setting up and Preparation Example for STM32f446ret6 Custom PCB's.
 ### Transmission Testing
-- TODO: How to set up CAN transmission in cube ide
+Connect CANbus Lines:
+
+Connect the CAN_H and CAN_L lines between PCB_A and PCB_B.
+
+Configure Termination:
+
+Use DIP switches on PCB_A to enable or disable termination based on your setup.
+
+Set Up PCB_B:
+
+Configure PCB_B to transmit CAN packets with a chosen identifier (e.g., 0x555 for standard CAN2.0A frames).
+
+Power On Both PCBs:
+
+Ensure both PCBs are powered up (either via debugger or external power).
+
+Verify Reception on PCB_A:
+
+Check the Rx ID LED indicators on PCB_A to confirm that the correct identifier was received (e.g., 0b10101010101).
 ### Reception Testing
-- TODO: How to set up CAN reception in cube ide
+Connect CANbus Lines:
+
+Connect the CAN_H and CAN_L lines between PCB_A and PCB_B.
+
+Configure Termination:
+
+Use DIP switches on PCB_A to configure the appropriate termination.
+
+Set DIP Switches on PCB_A:
+
+Set the DIP switches on PCB_A to transmit CAN packets with the desired identifier (e.g., 0x555).
+
+Power On Both PCBs:
+
+Ensure both PCBs are powered up (either via debugger or external power).
+
+Check Reception on PCB_B:
+
+Check the status LEDs or other indicators on PCB_B to confirm reception of the transmitted identifier (e.g., 0x555).
+
+Setup and Preparation for Testing STM32F446RET6 PCBs
+
+In this section, we’ll walk you through the process of configuring CAN communication for both transmission and reception using STM32CubeIDE.
+
+### Transmission Setup in STM32CubeIDE
+
+Open CubeMX in STM32CubeIDE.
+
+Enable CAN1 Peripheral:
+
+In the Peripherals tab, select CAN1.
+
+Configure CAN TX Pin:
+
+Choose the appropriate GPIO pin for CAN_Tx from the available options (e.g., PA12).
+
+Configure Baud Rate:
+
+Set the baud rate to 1MHz (or your desired rate).
+
+Write CAN Transmission Code:
+
+Use the HAL function HAL_CAN_AddTxMessage() to queue a CAN message for transmission.
+
+Reception Setup in STM32CubeIDE
+
+Enable CAN1 Peripheral:
+
+In the Peripherals tab, select CAN1.
+
+Configure CAN RX Pin:
+
+Choose the appropriate GPIO pin for CAN_Rx from the available options (e.g., PA11).
+
+Set Up Reception Filters:
+
+Configure CAN filters to accept specific identifiers.
+
+Write CAN Reception Code:
+
+Use the HAL function HAL_CAN_GetRxMessage() to retrieve incoming CAN messages.
 
 # Future Improvements
 - Addition of built in ST-link functionality which can flash other STM32s with predefined test code using Serial Wire, then once the target STM32 is programmed it starts CAN transmission and reception autotests to test CAN functionality, then logs the feedback via LEDs/sending error messages to a comport/display.
